@@ -17,9 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 
+from search import views as search_views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('api.urls'))
+    path('', include('api.urls')),
+    path('search/', search_views.search, name='search')
 ]
 if settings.DEBUG:
     import debug_toolbar

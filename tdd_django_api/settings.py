@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'rest_framework',
     'rest_framework.authtoken',
-    'api'
+    'api',
+    'search',
+    'django_elasticsearch_dsl'
 ]
 
 MIDDLEWARE = [
@@ -146,3 +148,8 @@ DEBUG_TOOLBAR_PANELS = [
     'debug_toolbar.panels.redirects.RedirectsPanel',
 ]
 
+ELASTICSEARCH_DSL = {
+    'default': {
+        'hosts': 'localhost:9200'
+    }
+}
